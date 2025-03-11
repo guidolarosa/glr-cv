@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { PortableText } from "next-sanity";
 import Link from "@/components/Link";
-import ReactPlayer from "react-player";
 import Image from "next/image";
 
 export const portableTextComponents = {
@@ -18,11 +17,6 @@ export const portableTextComponents = {
         </div>
       );
     },
-    slug: (props: any) => (
-      <div className="youtube-embed">
-        <ReactPlayer url={props.value.current} />
-      </div>
-    ),
     quote: (props: any) => {
       return (
         <figure>
