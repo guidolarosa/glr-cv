@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DocumentTextIcon } from "@sanity/icons";
 
 export const skill = {
@@ -15,7 +16,7 @@ export const skill = {
       title: "Percentage",
       name: "percentage",
       type: "number",
-      validation: rule => rule.required().min(0).max(100)
+      validation: (rule: any) => rule.required().min(0).max(100)
     }
   ],
 };
