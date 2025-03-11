@@ -1,4 +1,3 @@
-
 import Education from "@/components/columns/Education";
 import Info from "@/components/columns/Info";
 import Skills from "@/components/columns/Skills";
@@ -6,7 +5,11 @@ import Work from "@/components/columns/Work";
 import clsx from "clsx";
 import { JetBrains_Mono } from "next/font/google";
 
-const jetbrainsmono = JetBrains_Mono({ weight: ["100", "200", "300", "400"] });
+const jetbrainsmono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400"],
+  preload: true,
+});
 
 export default function Home() {
   return (
