@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { H1 } from "./typography";
 
 const Column = ({ title, children }: { title: string; children: any }) => {

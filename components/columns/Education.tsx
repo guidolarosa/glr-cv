@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { H1 } from "../typography";
 import { HOME } from "@/sanity/lib/queries";
 import { PortableText } from "next-sanity";
 import Column from "../Column";
 
 const Education = async () => {
-  const home = await sanityFetch({
+  const home : any = await sanityFetch({
     query: HOME,
   });
 

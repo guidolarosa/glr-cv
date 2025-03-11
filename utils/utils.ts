@@ -1,5 +1,4 @@
-import { Category, Lang } from "@/types";
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const getArticlePageParams = (currentPage: number) => {
   const trim_start =
     currentPage == 1
@@ -28,7 +27,7 @@ export const formatDate = (date: any, locale: string) => {
   return new Date(date).toLocaleString(locale, { dateStyle: "short" });
 };
 
-export const getCategoryName = (category: Category, lang: Lang) => {
-  const currentCategory = category.name?.find((locale) => locale._key === lang);
+export const getCategoryName = (category: any, lang: any) => {
+  const currentCategory = category.name?.find((locale : any) => locale._key === lang);
   return currentCategory?.value;
 };

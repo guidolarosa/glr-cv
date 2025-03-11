@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { H1 } from "../typography";
 import { HOME } from "@/sanity/lib/queries";
@@ -6,7 +7,7 @@ import Link from "@/components/Link";
 import { PortableText } from "next-sanity";
 
 const Info = async () => {
-  const home = await sanityFetch({
+  const home : any = await sanityFetch({
     query: HOME,
   });
 
@@ -46,7 +47,7 @@ const Info = async () => {
       <div className="flex flex-col gap-2">
         <strong>Links</strong>
         <ul className="text-xs">
-          {otherLinks.map((link, idx) => (
+          {otherLinks.map((link: any, idx: number) => (
             <li key={link._key} className="inline leading-relaxed">
               <Link href={link.url} className="text-emerald-500">
                 {link.label}

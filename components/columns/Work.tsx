@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { H2, H3 } from "../typography";
 import { JOB } from "@/sanity/lib/queries";
@@ -6,14 +7,14 @@ import Link from "@/components/Link";
 import Column from "../Column";
 
 const Work = async () => {
-  const jobs = await sanityFetch({
+  const jobs : any = await sanityFetch({
     query: JOB,
   });
 
   return (
     <Column title={"Work History"}>
       <ul className="flex flex-col gap-6">
-        {jobs.map((job) => (
+        {jobs.map((job : any) => (
           <li key={job._id} className="flex flex-col gap-2">
             <div>
               <H2 className="text-emerald-500">{job.title}</H2>
@@ -38,7 +39,7 @@ const Work = async () => {
             {job.links && (
               <div className="text-xs">
                 <ul>
-                  {job.links.map((link, idx) => (
+                  {job.links.map((link: any, idx: number) => (
                     <li key={link._key} className="inline">
                       <Link
                         href={link.url}
@@ -59,7 +60,7 @@ const Work = async () => {
               <div className="mt-3">
                 <H3 className="mb-2 !text-sm">Testimonials</H3>
                 <div className="border p-4 border-emerald-500 bg-emerald-950 rounded-sm">
-                  {job.testimonials.map((testimonial) => (
+                  {job.testimonials.map((testimonial: any) => (
                     <div
                       key={testimonial._key}
                       className="text-xs leading-relaxed"
